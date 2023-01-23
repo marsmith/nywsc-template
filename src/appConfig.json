@@ -1,22 +1,12 @@
 
 {
     "app": {
-        "title": "M5 Frontend",
-        "about-text" : "This application is a front end dashboard for M5."
+        "title": "NYWSC Template",
+        "about-text" : "This application is a template for NY WSC Web Maps."
     },
     "map": {
         "MapX": "-75.0",
         "MapY": "43.0",
-        "MapZoom": 7,
-        "siteListJSON": "https://ny.water.usgs.gov/maps/go2/SiteList.json",
-        "tripListJSON": "https://ny.water.usgs.gov/maps/go2/TripList.json",
-        "go2warningsJSON": "https://ny.water.usgs.gov/maps/go2/Go2Warnings.json",
-        "go2predictedWarningsJSON": "https://ny.water.usgs.gov/maps/go2/Go2PredictedWarnings.json",
-        "go2predictedWarningsJSON_NWM": "https://ny.water.usgs.gov/maps/go2/Go2PredictedWarnings_NWM.json",
-        "sampleSiteList": ["04250750", "04262000","04263000","04265000","04267500","04275000","04269000","04271815","04276500","04266500"],
-        "m5APIurl": "https://3.95.27.165/submit_route",
-        "routeColors": ["seagreen","yellow","hotpink","purple","skyblue","dimgrey","sienna","aquamarine","red"],
-        "officeGeoJSON": {"type": "FeatureCollection", "features": [{"id": "0", "type": "Feature", "properties": {"names": "Coram Office", "node_type": "office"}, "geometry": {"type": "Point", "coordinates": [-73.009785, 40.880245]}}, {"id": "1", "type": "Feature", "properties": {"names": "Cortland Office", "node_type": "office"}, "geometry": {"type": "Point", "coordinates": [-76.2507917, 42.557794]}}, {"id": "2", "type": "Feature", "properties": {"names": "Milford Office", "node_type": "office"}, "geometry": {"type": "Point", "coordinates": [-74.801366, 41.316092]}}, {"id": "3", "type": "Feature", "properties": {"names": "Potsdam Office", "node_type": "office"}, "geometry": {"type": "Point", "coordinates": [-74.9922049, 44.6701946]}}, {"id": "4", "type": "Feature", "properties": {"names": "Troy Office", "node_type": "office"}, "geometry": {"type": "Point", "coordinates": [-73.6987593, 42.6810144]}}]}
-                
+        "MapZoom": 7      
     }
 }

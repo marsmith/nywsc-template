@@ -25,8 +25,7 @@
     "@uswds/uswds": "^3.3.0",
     "esri-leaflet": "^3.0.7",
     "jquery": "^3.6.0",
-    "leaflet": "^1.7.1",
-    "usgs-search-api": "github:usgs/search_api"
+    "leaflet": "^1.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
