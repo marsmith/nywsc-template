@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta name="author" content="Martyn Smith - USGS NY WSC">
+  <link rel="copyright" href="license.txt">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title class="app-title">tab title</title>
+
+</head>
+
+<body>
+  <section class="usa-banner" aria-label="Official government website">
+    <div class="usa-accordion">
+      <header class="usa-banner__header">
+        <div class="usa-banner__inner">
+          <div class="grid-col-auto">
+            <img class="usa-banner__header-flag" src="./img/us_flag_small.png" alt="U.S. flag">
+          </div>
+          <div class="grid-col-fill tablet:grid-col-auto">
+            <p class="usa-banner__header-text">An official website of the United States government</p>
+            <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+          </div>
+          <button class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="gov-banner">
+            <span class="usa-banner__button-text">Here’s how you know</span>
+          </button>
+        </div>
+      </header>
+      <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+        <div class="grid-row grid-gap-lg">
+          <div class="usa-banner__guidance tablet:grid-col-6">
+            <img class="usa-banner__icon usa-media-block__img" src="./img/icon-dot-gov.svg" alt="Dot gov">
+            <div class="usa-media-block__body">
+              <p>
+                <strong>The .gov means it’s official.</strong>
+                <br>
+                Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure
+                you’re on a federal government site.
+              </p>
+            </div>
+          </div>
+          <div class="usa-banner__guidance tablet:grid-col-6">
+            <img class="usa-banner__icon usa-media-block__img" src="./img/icon-https.svg" alt="Https">
+            <div class="usa-media-block__body">
+              <p>
+                <strong>The site is secure.</strong>
+                <br>
+                The <strong>https://</strong> ensures that you are connecting to the official website and that any
+                information you provide is encrypted and transmitted securely.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+		<!-- USGS Top Bar -->
+		<div class="top-bar">
+			<!-- Menu button - hidden unless mobile -->
+			<div class="top-bar-mobile-menu-button" id="mobile-main-menu">
+				<span class="mobile-icon-close"><svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+          <use xlink:href="./img/sprite.svg#close"></use>
+        </svg></span>
+				<span class="mobile-icon-open"><svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+          <use xlink:href="./img/sprite.svg#menu"></use>
+        </svg></span>
+			</div>
+			
+			<!-- Logo and title -->
+			<div class="top-bar-branding">
+				<!-- Logo -->
+				<a class='top-bar-logo' href="https://www.usgs.gov">
+					<img src="./img/USGS_logo.svg"/>
+				</a>
+				<!-- App Name -->
+				<span class="top-bar-app-name app-title font-alt-xl">app title</span>
+			</div>
+
+			<!-- Right side -->
+			<div class="top-bar-right">
+
+				<!-- Wrap each button or element in top-bar-right-item - it will center it vertically -->
+				<div class="top-bar-right-item">
+          <a
+          href="#about-modal"
+          class="usa-button bg-primary-light margin-y-3"
+          aria-controls="about-modal"
+          data-open-modal
+          ><svg id="about-icon" class="usa-icon" aria-hidden="true" focusable="false" role="img">
+            <use xlink:href="./img/sprite.svg#info_outline"></use>
+          </svg>About</a
+        >
+				</div>
+
+			</div>
+    </div> <!-- End Top Bar -->
+
+
+  </header>
+
+  <!-- App Body -->
+  <div class="app-body">
+
+    <!--  About Modal -->
+    <div class="usa-modal usa-modal--lg" id="about-modal" aria-labelledby="about-modal-heading" aria-describedby="about-modal-description">
+      <div class="usa-modal__content">
+        <div class="usa-modal__main">
+          <h2 class="usa-modal__heading" id="about-modal-heading">
+            About the Application  
+          </h2>
+          <div class="usa-prose">
+            <p id="about-modal-description">
+          
+              <p id="about-text"></p>
+
+  
+            </p>
+          </div>
+          <div class="usa-modal__footer">
+            <ul class="usa-button-group">
+              <li class="usa-button-group__item">
+                <button type="button" class="usa-button" data-close-modal>
+                  Close
+                </button>
+              </li>
+  
+            </ul>
+          </div>
+        </div>
+        <button
+          class="usa-button usa-modal__close"
+          aria-label="Close this window"
+          data-close-modal
+        >
+          <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+            <use xlink:href="./img/sprite.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!--  End About Modal -->
+
+    <!--  Submit Modal -->
+    <div class="usa-modal usa-modal--lg" id="submit-modal" aria-labelledby="submit-modal-heading" aria-describedby="submit-modal-description">
+      <div class="usa-modal__content">
+        <div class="usa-modal__main">
+          <h2 class="usa-modal__heading" id="submit-modal-heading">
+            Submit M5 Job
+          </h2>
+          <div class="usa-prose">
+            <div id="submitModalContents" >
+              <h4 id="component-settings-list">Office(s)</h4>
+              <p id="officeList"></p>
+
+              <h4 id="component-settings-list">Trip(s)</h4>
+              <p id="tripList"></p>
+
+              <h4 id="component-settings-list">Available Driver(s)</h4>
+              <p id="driverList"></p>
+
+              <h4 id="component-settings-list">Site(s)</h4>
+              <table class="usa-table usa-table--borderless usa-table--compact">
+                <thead>
+                  <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Trip Name</th>
+                    <th scope="col">Office</th>
+                    <th scope="col">Owner</th>
+                  </tr>
+                </thead>
+                <tbody id="siteTableBody">
+                </tbody>
+              </table>
+              
+
+            </div>
+          </div>
+          <div class="usa-modal__footer">
+            <ul class="usa-button-group">
+              <li class="usa-button-group__item">
+                <button type="button" class="usa-button" id="submitSites">
+                  Submit
+                </button>
+              </li>
+  
+            </ul>
+            <div hidden id="submitLoader" class="loader margin-y-3"></div>
+          </div>
+        </div>
+        <button
+          id="closeSubmitModal" class="usa-button usa-modal__close"
+          aria-label="Close this window"
+          data-close-modal
+        >
+          <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+            <use xlink:href="./img/sprite.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!--  End Submit Modal -->
+
+      <!-- Sidebar -->
+      <div id="main-menu">
+          <div class="main-menu-container scrollable">
+              <div class="menu-content"> 
+                  <div class="scrollable-content">
+
+                    <div class="usa-accordion">
+                      <!-- Use the accurate heading level to maintain the document outline -->
+                      <h4 class="usa-accordion__heading">
+                        <button
+                          class="usa-accordion__button"
+                          aria-expanded="true"
+                          aria-controls="a1"
+                        >
+                          Map Layers
+                        </button>
+                      </h4>
+                      <div id="a1" class="usa-accordion__content usa-prose">
+
+                        <div id="legend" style="display:none;" class="usa-card__container">
+                          <div class="usa-card__header">
+                            <h2 class="usa-card__heading">Legend</h2>
+                          </div>
+                          <div class="usa-card__body">
+                            <table class="usa-table usa-table--borderless">
+                  
+                              <tbody id="legendTable">
+                                <tr><td class="routeStopLegend"></td><td>Site Index</td></tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+
+
+                        <!-- <h5>Office</h5> -->
+                        <form class="usa-form">
+                          <select class="usa-select" name="options" id="centerSelect">
+                            <option selected="selected" value="default">Select an office</option>
+                          </select>
+                        </form>
+
+                        <!-- <h5>Trip</h5> -->
+                        <form class="usa-form">
+                          <select class="usa-select" name="options" id="tripSelect" style="display:none;" multiple>
+                            <!-- <option selected="selected" value="default">Select a trip</option> -->
+                          </select>
+                        </form>
+
+                        <!-- <h5>Sites</h5> -->
+                        <form class="usa-form">
+                          <select class="usa-select" name="options" id="siteSelect" style="display:none;" multiple>
+                            <!-- <option selected="selected" value="default">Select a trip</option> -->
+                          </select>
+                        </form>
+
+                        <button type="" href="#submit-modal" aria-controls="submit-modal" class="usa-button usa-button--accent-warm usa-focus margin-y-3"" id="openSiteModal" data-open-modal>
+                          Open Site Modal
+                        </button>
+
+   
+                      </div>
+                    
+                      <!-- Use the accurate heading level to maintain the document outline -->
+                      <h4 class="usa-accordion__heading">
+                        <button
+                          class="usa-accordion__button"
+                          aria-expanded="false"
+                          aria-controls="a2"
+                        >
+                          Base Maps
+                        </button>
+                      </h4>
+                      <div id="a2" class="usa-accordion__content usa-prose">
+      
+                        <form class="usa-form">
+                          <fieldset class="usa-fieldset">
+                            <legend class="usa-legend usa-legend">Select a basemap</legend>
+                            <div class="usa-radio">
+                              <input
+                                class="usa-radio__input"
+                                id="basemaps-gray"
+                                type="radio"
+                                name="basemaps"
+                                value="Gray"
+                                checked
+                              />
+                              
+                              <label class="usa-radio__label" for="basemaps-gray"
+                                >Gray</label
+                              >
+                            </div>
+                            <div class="usa-radio">
+                              <input
+                                class="usa-radio__input"
+                                id="basemaps-streets"
+                                type="radio"
+                                name="basemaps"
+                                value="Streets"
+                              />
+                              <label class="usa-radio__label" for="basemaps-streets"
+                                >Streets</label
+                              >
+                            </div>
+                            <div class="usa-radio">
+                              <input
+                                class="usa-radio__input"
+                                id="basemaps-topo"
+                                type="radio"
+                                name="basemaps"
+                                value="Topo"
+                              />
+                              <label class="usa-radio__label" for="basemaps-topo"
+                                >Topographic</label
+                              >
+                            </div>
+        
+                            <div class="usa-radio">
+                              <input
+                                class="usa-radio__input"
+                                id="basemaps-satellite"
+                                type="radio"
+                                name="basemaps"
+                                value="Imagery"
+                              />
+                              <label class="usa-radio__label" for="basemaps-satellite"
+                                >Satellite</label
+                              >
+                            </div>
+        
+                            <div class="usa-radio">
+                              <input
+                                class="usa-radio__input"
+                                id="basemaps-natgeo"
+                                type="radio"
+                                name="basemaps"
+                                value="NatGeo"
+                              />
+                              <label class="usa-radio__label" for="basemaps-natgeo"
+                                >National Geographic</label
+                              >
+                            </div>
+        
+        
+                          </fieldset>
+                        </form>
+      
+                      </div>
+                    </div>
+                              
+
+                  <!-- Developed by -->
+                  <div id="sidebarFooter">Developed by USGS NY WSC</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Map -->
+      <div id="mapDiv">
+      </div>
+
+  </div> <!-- End App Body -->
+
+  <footer class="usa-footer usa-footer--slim">
+
+    <div class="usa-footer__secondary-section">
+      <div class="usa-footer__primary-container grid-row">
+        <div class="mobile-lg:grid-col-8">
+          <nav class="usa-footer__nav" aria-label="Footer navigation,">
+            <ul class="grid-row grid-gap">
+              <li
+                class="
+                  mobile-lg:grid-col-6
+                  desktop:grid-col-auto
+                  usa-footer__primary-content
+                "
+              >
+              <a class="usa-footer__primary-link" href="https://www.doi.gov/privacy">DOI Privacy Policy</a>
+              </li>
+              <li
+                class="
+                  mobile-lg:grid-col-6
+                  desktop:grid-col-auto
+                  usa-footer__primary-content
+                "
+              >
+              <a class="usa-footer__primary-link" href="https://www.usgs.gov/legal">Legal</a>
+              </li>
+              <li
+                class="
+                  mobile-lg:grid-col-6
+                  desktop:grid-col-auto
+                  usa-footer__primary-content
+                "
+              >
+              <a class="usa-footer__primary-link" href="https://www.usgs.gov/accessibility">Accessibility</a>
+              </li>
+              <li
+                class="
+                  mobile-lg:grid-col-6
+                  desktop:grid-col-auto
+                  usa-footer__primary-content
+                "
+              >
+              <a class="usa-footer__primary-link" href="https://www.usgs.gov/sitemap">Site Map</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mobile-lg:grid-col-4">
+          <address class="usa-footer__address">
+            <div class="grid-row grid-gap">
+              <div
+                class="grid-col-auto mobile-lg:grid-col-12 desktop:grid-col-auto"
+              >
+                <div class="usa-footer__contact-info">
+                  <a href="tel:+18882758747">1-888-ASK-USGS</a>
+                </div>
+              </div>
+              <div
+                class="grid-col-auto mobile-lg:grid-col-12 desktop:grid-col-auto"
+              >
+                <div class="usa-footer__contact-info">
+                  <a href="https://answers.usgs.gov">answers.usgs.gov</a>
+                </div>
+              </div>
+            </div>
+          </address>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="usa-footer__secondary-section">
+      <div class="grid-container">
+        <div class="usa-footer__logo grid-row grid-gap-2">
+          <div class="grid-col-auto">
+            <img class="usa-footer__logo-img" src="/assets/img/logo-img.png" alt="" />
+          </div>
+          <div class="grid-col-auto">
+            <p class="usa-footer__logo-heading">&lt;Agency Contact Center&gt;</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+
+  <!-- <footer class="hide-footer">
+    <div class="usa-identifier">
+      <section
+        class="usa-identifier__section usa-identifier__section--masthead"
+        aria-label="Agency identifier,,"
+      >
+        <div class="usa-identifier__container">
+          <div class="usa-identifier__identity" aria-label="Agency description">
+            <p class="usa-identifier__identity-domain">USGS.gov</p>
+            <p class="usa-identifier__identity-disclaimer">
+              An official website of the
+              <a href="https://www.doi.gov">U.S. Department of the Interior</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <nav
+        class="usa-identifier__section usa-identifier__section--required-links"
+        aria-label="Important links,,"
+      >
+        <div class="usa-identifier__container">
+          <ul class="usa-identifier__required-links-list">
+            <li class="usa-identifier__required-links-item">
+              <a
+                href="https://www.doi.gov/about"
+                class="usa-identifier__required-link usa-link"
+                >About DOI</a
+              >
+            </li>
+            <li class="usa-identifier__required-links-item">
+              <a
+                href="https://www.usgs.gov/accessibility"
+                class="usa-identifier__required-link usa-link"
+                >Accessibility support</a
+              >
+            </li>
+            <li class="usa-identifier__required-links-item">
+              <a
+                href="https://www.usgs.gov/foia"
+                class="usa-identifier__required-link usa-link"
+                >FOIA requests</a
+              >
+            </li>
+            <li class="usa-identifier__required-links-item">
+              <a
+                href="https://www.doi.gov/sites/doi.gov/files/doi-aggregate-no-fear-report-q1_0.pdf"
+                class="usa-identifier__required-link usa-link"
+                >No FEAR Act data</a
+              >
+            </li>
+            <li class="usa-identifier__required-links-item">
+              <a
+                href="https://www.doioig.gov/"
+                class="usa-identifier__required-link usa-link"
+                >Office of the Inspector General</a
+              >
+            </li>
+            <li class="usa-identifier__required-links-item">
+              <a
+                href="https://www.usgs.gov/bpi/program-book"
+                class="usa-identifier__required-link usa-link"
+                >Performance reports</a
+              >
+            </li>
+            <li class="usa-identifier__required-links-item">
+              <a
+                href="https://www.doi.gov/privacy"
+                class="usa-identifier__required-link usa-link"
+                >Privacy policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section
+        class="usa-identifier__section usa-identifier__section--usagov"
+        aria-label="U.S. government information and services,,"
+      >
+        <div class="usa-identifier__container">
+          <div class="usa-identifier__usagov-description">
+            Looking for U.S. government information and services?
+          </div>
+          <a href="https://www.usa.gov/" class="usa-link">Visit USA.gov</a>
+        </div>
+      </section>
+    </div>
+  </footer> -->
+
+</body>
+
+</html>

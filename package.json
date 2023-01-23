@@ -1,0 +1,52 @@
+{
+  "name": "m5-frontend",
+  "version": "1.0.0",
+  "description": "m5-frontend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "USGS",
+    "United States Geological Survey"
+  ],
+  "author": {
+    "name": "Martyn Smith",
+    "url": "https://www.usgs.gov/centers/new-york-water-science-center"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hail/m5-frontend"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@turf/convex": "^6.5.0",
+    "@uswds/uswds": "^3.3.0",
+    "esri-leaflet": "^3.0.7",
+    "jquery": "^3.6.0",
+    "leaflet": "^1.7.1",
+    "usgs-search-api": "github:usgs/search_api"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@uswds/compile": "^1.0.0-beta.3",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.7",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss-import": "^14.1.0",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.56.2",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  }
+}
